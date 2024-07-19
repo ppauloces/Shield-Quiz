@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import PlayerInput from './components/PlayerInput.vue';
-
+import Game from './components/Game.vue';
 // Cria uma referência para armazenar o nome do jogador
 const playerName = ref('');
 
@@ -46,7 +46,7 @@ onMounted(() => {
       <PlayerInput @submitName="setPlayerName" />
     </div>
     <div v-else>
-      <h1>Bem-vindo, {{ playerName }}!</h1>
+      <Game :playerName="playerName" />
     </div>
   </div>
 </template>
