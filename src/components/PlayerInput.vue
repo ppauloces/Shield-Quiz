@@ -87,11 +87,19 @@ function submitName() {
 
 .player-input-container {
   @apply flex flex-col items-center justify-center h-screen bg-gray-900 text-white;
+  /* Garante que o container ocupe a tela inteira */
+}
+
+.input-button-container {
+  @apply flex flex-col items-center justify-center mb-4;
+  /* Adiciona uma margem inferior para o container do input e botão */
 }
 
 .player-input {
   @apply p-2 rounded-md bg-gray-800 mr-2;
   outline: none;
+  max-width: 400px;
+  width: 100%;
 }
 
 .player-button {
@@ -99,9 +107,11 @@ function submitName() {
 }
 
 .credit-box {
-  @apply bg-gray-800 text-white p-4 rounded-md fixed bottom-4 left-1/2 transform -translate-x-1/2 opacity-75;
-  min-width: 200px;
-  max-width: 90%;
+  @apply bg-gray-800 text-white p-4 rounded-md;
+  /* Remove o posicionamento fixo para que a caixa de créditos fique abaixo do input */
+  margin-top: 1rem; /* Adiciona uma margem superior para separar do input */
+  width: 90%; /* Ajusta a largura da caixa de créditos */
+  max-width: 500px; /* Define uma largura máxima */
   text-align: center;
 }
 
@@ -116,4 +126,14 @@ function submitName() {
 .tutorial-text {
   @apply text-base;
 }
+
+/* Responsividade */
+@media (min-width: 640px) {
+  .credit-box {
+    @apply fixed bottom-4 left-1/2 transform -translate-x-1/2 opacity-75;
+    /* Posiciona a caixa de créditos no fundo da tela em telas maiores */
+    min-width: 200px;
+  }
+}
 </style>
+
